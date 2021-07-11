@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 
 class Seller extends Authenticatable
 {
@@ -24,7 +25,7 @@ class Seller extends Authenticatable
         $seller = new static;
         $seller->name = $fields['name'];
         $seller->phone = $fields['phone'];
-        $seller->password = bcrypt($fields['password']);
+        $seller->password = Hash::make($fields['password']);;
         $seller->save();
 
         return $seller;

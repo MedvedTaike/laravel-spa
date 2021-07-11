@@ -13,6 +13,6 @@ class AdminController extends Controller
     }
     public function information()
     {
-        return 'This is the necessary information!';
+        return 'Test';
     }
 }

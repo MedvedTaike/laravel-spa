@@ -13,6 +13,6 @@ class CategoryController extends Controller
     {
         $categories = Category::where('status', '1')->get();
 
-        return CategoryCollection::collection($categories);
+        return new CategoryCollection($categories);
     }
 }

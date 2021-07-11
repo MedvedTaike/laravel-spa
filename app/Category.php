@@ -18,6 +18,6 @@ class Category extends Model
     }
     public function getStatusText($status)
     {
-        return ($status == 1) ? 'Allowed' : 'Not Allowed';
+        return ($status == 1) ? 'Разрешен' : 'Не разрешен';
     }
 }
